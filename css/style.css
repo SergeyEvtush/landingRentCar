@@ -102,36 +102,57 @@ body._lock{
 	}
 	.logotype__image img{
 	width: 300px;
-
+position: relative;
+z-index: 10;
 	}
 	.logotype__name {
 	}
 	.menu__body {
 		
 	}
-	.menu__list {
-		display: flex;
-		align-items: center;
-	}
+	
+	
 	.menu__list-item {
 		display: block;
 		width: 100%;
 		height: 36px;
 		text-align: center;
 		padding: 10px 20px;
+		
+	}
+	@media(max-width:900px){
+		.menu__list-item {
+			
+			padding: 10px 10px;
+			
+		}
+
 	}
 	.menu__link {
 		font-size: 16px;
 		font-family: Open Sans;
-		color: #1a1a1a;
+		color: #fff;
 	}
 	
-	.menu__list-item:hover {
-background: rgba(155, 155, 155, 0.268);
-	}
-	.menu__list-item .active {
+	
+	.menu__list-item ._active {
 		background: rgba(82, 81, 81, 0.118);
 			}
+			@media(min-width:767px){
+				.menu__list {
+					display: flex;
+					align-items: center;
+				}
+				.menu__link {
+					font-size: 16px;
+					font-family: Open Sans;
+					color: #1a1a1a;
+				}
+				.menu__list-item:hover {
+					background: rgba(155, 155, 155, 0.268);
+						}
+			}
+			
 			/*page styles----------------------------------------------------------------*/
 			.page {
 				flex: 1 1 auto;
@@ -558,4 +579,132 @@ padding:60px 0px ;
 .social__item {
 	padding: 8px;
 }
-	
+/*класс бургера*/
+/*по умолчанию скрыт*/
+.menu__icon {
+	display: none;
+}
+.menu__body {
+}
+.menu__list {
+}
+.link__geograph{
+	color: #111111;
+}
+
+/*--------------------------------------------------*/
+	/*стили для бургера нах-ся в медиа запрорсе т.к его появление будет только после прохождения ширирны меньшей 767px*/
+@media(max-width:767px)
+{
+.menu__icon{
+z-index: 5;
+display: block;
+position: relative;
+width: 30px;
+height: 18px;
+cursor: pointer;
+}
+/*рисуем бургер*/
+/*общие стили для полосок*/
+.menu__icon span,
+.menu__icon:before,
+.menu__icon:after
+{
+right: 0;
+height: 10%;
+position: absolute;
+width: 100%;
+transition: all 0.3s ease 0s;
+background: #111111;
+margin: 0px 10px;
+}
+/*для того чтобы проявились псевдоэлементы*/
+.menu__icon:before,
+.menu__icon:after{
+content: "";
+
+}
+/*верхняя полоска*/
+.menu__icon:before{
+	top: 0;
+}
+/*нижняя полоска*/
+.menu__icon:after{
+	bottom: 0;
+}
+/*средняя полоска*/
+.menu__icon span{
+top: 50%;
+transform:scale(1)  translate(0px,-50%);
+
+}
+/*анимация иконки бургера ,при получении класса ._active изменяем вид иконки*/
+.menu__icon._active span{
+	transform:scale(0)  translate(0px,-50%);
+
+}
+.menu__icon._active::before{
+	top: 50%;
+transform:rotate(-45deg) translate(0px ,-50%);
+}
+.menu__icon._active::after{
+	bottom: 50%;
+transform:rotate(45deg) translate(0px ,50%);
+}
+/*-------------------------------------------------------------*/
+/*стили для  выпадающего меню при мобильной версии*/
+
+.menu__body{
+position: fixed;
+top: 0;
+left: -100%;
+width: 100%;
+height: 100%;
+background: rgba(0,0,0,0.9);
+padding: 100px 30px 30px 30px;
+transition: left  0.3s ease 0s;
+overflow: auto;
+}
+.menu__body._active{
+left: 0;
+
+}
+/*плашка для того чтобы пункты меню прятались за нее при скролле ,а не наезжали на логотип*/
+.menu__body::before{
+content: "";
+position: fixed;
+width: 100%;
+top: 0;
+left: 0;
+height: 70px;
+background: #ffff;
+z-index: 15;
+}
+.menu__list >li{
+	flex-wrap: wrap;
+margin: 0px 0px 30px 0px;
+
+}
+.menu__list >li:last-child{
+margin-bottom: 0px;
+
+}
+.menu__list >li._active .menu__sub-list{
+display: block;
+
+}
+.menu__link{
+font-size: 24px;
+}
+.menu__sub-list{
+position: relative;
+background-color: #fff;
+flex:1 1 100%;
+margin: 20px 0px 0px 0px;
+display: none;
+}
+.menu_sub-link{
+font-size: 20px;
+color: #000;
+	}
+}
