@@ -96,19 +96,13 @@ body._lock{
 	margin: 0px -10px;
 		
 	}
-	.header__logotype {
-		display: flex;
-		padding: 10px;
-	}
-	.logotype__image img{
-	width: 300px;
-position: relative;
-z-index: 10;
-	}
-	.logotype__name {
-	}
+	
+
+	
+	
+
 	.menu__body {
-		
+		padding:30px 0px ;
 	}
 	
 	
