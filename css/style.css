@@ -96,9 +96,15 @@ body._lock{
 	margin: 0px -10px;
 		
 	}
-	
-
-	
+	.logotype__image{
+		position: relative;
+		z-index: 10;
+		  padding: 5px;
+		  width: 250px;
+	}
+	.logotype__image img{
+		max-width: 100%;
+	}
 	
 
 	.menu__body {
@@ -530,9 +536,11 @@ background: #FFF;
 	.body__column {
 		flex:1 1 50%;
 	}
-}
-.footer__icon {
-	padding: 10px;
+	.footer__body {
+		
+		padding:40px  10px 40px 10px ;
+		margin: 0px;
+	}
 }
 
 .footer-column__title {
@@ -540,6 +548,25 @@ background: #FFF;
 	font-size: 20px;
 	padding: 10px;
 
+}
+@media(max-width:460px){
+	.footer__icon {
+		padding: 5px;
+	}
+	.body__column{
+
+		margin:20px  0px ;
+	}
+	.footer-column__title {
+
+		padding: 5px;
+	
+	}
+	.footer__body {
+		
+		padding:20px  10px 20px 10px ;
+		margin: 0px;
+	}
 }
 .footer-column__links {
 	display: flex;
