@@ -7,6 +7,8 @@
 <link href="https://fonts.googleapis.com/css?family=Roboto:100,100italic,300,300italic,regular,italic,500,500italic,700,700italic,900,900italic" rel="stylesheet" />
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,regular,500,600,700,800,300italic" rel="stylesheet" />
 	<link rel="stylesheet" href="css/style.css">
+	
+	<link rel="stylesheet" href="css/popup_styles.css">
 	<title>Voyage</title>
 </head>
 <body>
@@ -113,7 +115,7 @@
 				<div class="column__header-offert ">Hundai Solaris</div>
 				<div class="column__text-offertCoast">1600 руб / Сутки</div>
 				<div class="column__buttons-offert">
-					<a href="" class="column__offert-button column__button">Выбрать </a>
+					<a href="#popup" class="column__offert-button column__button popup-link">Выбрать </a>
 				</div>
 			</div>
 	</div>
@@ -125,7 +127,7 @@
 						<div class="column__header-offert ">Hundai Solaris</div>
 						<div class="column__text-offertCoast">1600 руб / Сутки</div>
 						<div class="column__buttons-offert">
-							<a href="" class="column__offert-button column__button">Выбрать </a>
+							<a href="#popup_1" class="column__offert-button column__button popup-link">Выбрать </a>
 						</div>
 					</div>
 				
@@ -139,7 +141,7 @@
 										<div class="column__header-offert ">Hundai Solaris</div>
 										<div class="column__text-offertCoast">1600 руб / Сутки</div>
 										<div class="column__buttons-offert">
-											<a href="" class="column__offert-button column__button">Выбрать </a>
+											<a href="#popup_2" class="column__offert-button column__button popup-link">Выбрать </a>
 										</div>
 									</div>
 	</div>
@@ -264,7 +266,7 @@
 							<a href="" class="links__item mail__link">evtushru2008@yandex.ru</a>
 							<div class="links__body-mes">			<a href="" class="links__item mail__link"><img src="img/section5FooterContacns/viber.svg" alt=""></a>
 								<a href="" class="links__item mail__link"><img src="img/section5FooterContacns/whatsapp.svg" alt=""></a>
-								<a href="" class="links__item mail__link"><img src="img/section5FooterContacns/telegramm.svg" alt=""></a></div>
+							</div>
 						</div>
 					</div>
 					<div class="body__column">
@@ -302,6 +304,37 @@
 	
 	</footer>
 </div>
+<div id="popup" class="popup">
+	<div class="popup__body">
+		<div class="popup__content">
+			<a href="#header" class="popup__close close-popup">X</a>
+			<div class="popup__title">Это модальное окно № 1</div>
+			<div class="popup__text">Lorem ipsum dolor, sit amet consectetur adipisicing elit<a href="#popup_2" class="popup-link">Попап №4</a> Quas quod voluptas unde quis aperiam
+				 laudantium facere voluptatem fugit quo accusantium nemo asperiores provident eos dicta ullam error, odit libero? Odit!</div>
+		</div>
+	</div>
+	</div>
+	<div id="popup_1" class="popup">
+		<div class="popup__body">
+			<div class="popup__content">
+				<a href="#header" class="popup__close close-popup">X</a>
+				<div class="popup__title">Это модальное окно № 1</div>
+				<div class="popup__text">Lorem ipsum dolor, sit amet consectetur adipisicing elit<a href="#popup_2" class="popup-link">Попап №4</a> Quas quod voluptas unde quis aperiam
+					 laudantium facere voluptatem fugit quo accusantium nemo asperiores provident eos dicta ullam error, odit libero? Odit!</div>
+			</div>
+		</div>
+		</div>
+		<div id="popup_2" class="popup">
+			<div class="popup__body">
+				<div class="popup__content">
+					<a href="#header" class="popup__close close-popup">X</a>
+					<div class="popup__title">Это модальное окно № 1</div>
+					<div class="popup__text">Lorem ipsum dolor, sit amet consectetur adipisicing elit<a href="#popup_2" class="popup-link">Попап №4</a> Quas quod voluptas unde quis aperiam
+						 laudantium facere voluptatem fugit quo accusantium nemo asperiores provident eos dicta ullam error, odit libero? Odit!</div>
+				</div>
+			</div>
+			</div>
 	<script src="js/script.js"></script>
+	<script src="js/popup_script.js"></script>
 </body>
 </html>
