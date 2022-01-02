@@ -80,6 +80,7 @@ body._lock{
 		max-height:70px ;
 		display: flex;
 		align-items: center;
+		justify-content: center;
 	}
 	.header__container {
 		
@@ -99,11 +100,16 @@ body._lock{
 	.logotype__image{
 		position: relative;
 		z-index: 10;
-		  padding: 5px;
-		  width: 250px;
+	width: 300px;
+
+
+		 
 	}
 	.logotype__image img{
-		max-width: 100%;
+	max-width: 100%;
+	max-height: 70px;
+	
+		
 	}
 	
 
