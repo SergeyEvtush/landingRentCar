@@ -7,13 +7,13 @@
 <link href="https://fonts.googleapis.com/css?family=Roboto:100,100italic,300,300italic,regular,italic,500,500italic,700,700italic,900,900italic" rel="stylesheet" />
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,regular,500,600,700,800,300italic" rel="stylesheet" />
 	<link rel="stylesheet" href="css/style.css">
-	
 	<link rel="stylesheet" href="css/popup_styles.css">
+	<link rel="stylesheet" href="css/formstyle.css">
 	<title>Voyage</title>
 </head>
 <body>
 	<div class="wraper">
-		<header class="header">
+		<header class="header lock-padding">
 			<div class="header__container _container">
 				<div class="heder__container-body">
 					<div class="header__logotype">
@@ -42,7 +42,6 @@
 				
 			</div>
 		</header>
-
 	<main class="page">
 		<div class="page__main-block main-block">
 			<div class="main-block__container _container">
@@ -127,7 +126,7 @@
 						<div class="column__header-offert ">Hundai Solaris</div>
 						<div class="column__text-offertCoast">1600 руб / Сутки</div>
 						<div class="column__buttons-offert">
-							<a href="#popup_1" class="column__offert-button column__button popup-link">Выбрать </a>
+							<a href="#popup" class="column__offert-button column__button popup-link">Выбрать </a>
 						</div>
 					</div>
 				
@@ -141,7 +140,7 @@
 										<div class="column__header-offert ">Hundai Solaris</div>
 										<div class="column__text-offertCoast">1600 руб / Сутки</div>
 										<div class="column__buttons-offert">
-											<a href="#popup_2" class="column__offert-button column__button popup-link">Выбрать </a>
+											<a href="#popup" class="column__offert-button column__button popup-link">Выбрать </a>
 										</div>
 									</div>
 	</div>
@@ -306,35 +305,76 @@
 </div>
 <div id="popup" class="popup">
 	<div class="popup__body">
-		<div class="popup__content">
-			<a href="#header" class="popup__close close-popup">X</a>
-			<div class="popup__title">Это модальное окно № 1</div>
-			<div class="popup__text">Lorem ipsum dolor, sit amet consectetur adipisicing elit<a href="#popup_2" class="popup-link">Попап №4</a> Quas quod voluptas unde quis aperiam
-				 laudantium facere voluptatem fugit quo accusantium nemo asperiores provident eos dicta ullam error, odit libero? Odit!</div>
-		</div>
-	</div>
-	</div>
-	<div id="popup_1" class="popup">
-		<div class="popup__body">
-			<div class="popup__content">
+		<div class="popup__content">			
+			<div class="form-wrapper">
 				<a href="#header" class="popup__close close-popup">X</a>
-				<div class="popup__title">Это модальное окно № 1</div>
-				<div class="popup__text">Lorem ipsum dolor, sit amet consectetur adipisicing elit<a href="#popup_2" class="popup-link">Попап №4</a> Quas quod voluptas unde quis aperiam
-					 laudantium facere voluptatem fugit quo accusantium nemo asperiores provident eos dicta ullam error, odit libero? Odit!</div>
-			</div>
-		</div>
-		</div>
-		<div id="popup_2" class="popup">
-			<div class="popup__body">
-				<div class="popup__content">
-					<a href="#header" class="popup__close close-popup">X</a>
-					<div class="popup__title">Это модальное окно № 1</div>
-					<div class="popup__text">Lorem ipsum dolor, sit amet consectetur adipisicing elit<a href="#popup_2" class="popup-link">Попап №4</a> Quas quod voluptas unde quis aperiam
-						 laudantium facere voluptatem fugit quo accusantium nemo asperiores provident eos dicta ullam error, odit libero? Odit!</div>
-				</div>
-			</div>
-			</div>
+				<form id="form-contact" method="POST" class="contact-form" autocomplete="off" enctype="multipart/form-data">
+				  <p class="contact-form__title">Форма бронирования автомобиля</p>
+				  <div class="preloader"></div>
+				  <p class="contact-form__message"></p>
+					 <!-- Поле с маркой и номером автомобиля--автозаполнение--
+					  <div class="contact-form__input-wrapper contact-form__input-wrapper_car">
+					  <input name="car" type="text" class="contact-form__input contact-form__input_car" value=""
+								placeholder="">
+					</div> -->
+			  
+				  <!-- Поле с именем -->
+				  <div class="contact-form__input-wrapper contact-form__input-wrapper_name">
+					 <input name="name" type="text" class="contact-form__input contact-form__input_name"
+							  placeholder="Введите ваше имя">
+				  </div>
+				  <!-- Поле с телефоном -->
+				  <div class="contact-form__input-wrapper contact-form__input-wrapper_phone">
+					 <input name="phone" type="tel" class="contact-form__input contact-form__input_phone"
+							  placeholder="Введите ваш телефон">
+				  </div>
+					<!-- Поле с датами возврата и получения автомобиля -->
+				  <div class="contact-form__input-wrapper contact-form__input-wrapper_date">
+					  <label for="" class="label__input-date">Установите дату получения автомобиля</label>
+					  <input name="date_take" type="date" class="contact-form__input contact-form__input_date _take"
+								placeholder="Установите дату получения автомобиля">
+								<label for="" class="label__input-date">Установите дату возврата автомобиля</label>
+								<input name="date__back" type="date" class="contact-form__input contact-form__input_date _back"
+								placeholder="Установите дату возврата автомобиля">
+					</div>
+					<div class="contact-form__input-wrapper contact-form__input-wrapper_buster">
+						<div class="contact-form-input__item">
+						  <input name="buster__yes" type="radio" class="contact-form__input contact-form__input_buster __yes"
+						  id="form__buster__yes" value="yes" >
+						  <label for="form__buster__yes" class="buster__label" onClick=" Radioclick();">
+							 <span>детское кресло</span><checkbox></checkbox>>
+						 </label>
+						 <label for="form__buster__no" class="buster__label" onClick=" Radioclick();">
+							<span>детское кресло не нужно</span>
+						</label>
+						 <input name="buster__no" type="radio" class="contact-form__input contact-form__input_buster __no"
+						 id="form__buster__no" value="no"checked >
+						</div>
+						
+					</div>
+				  <!--Поле с темой в письме-->
+				  <input name="theme" type="hidden" class="contact-form__input contact-form__input_theme"
+							value="заявка с сайта S-car">
+				  <!--Кнопка отправки формы-->
+				  <button type="submit" class="contact-form__button">Отправить</button>
+		  
+				</form>
+			 </div>
+	</div>
+	</div>
+
 	<script src="js/script.js"></script>
 	<script src="js/popup_script.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="js/formjs.js"></script>
+  
+
+  <!-- Маска ввода номера телефона. Подробнее тут: https://smartlanding.biz/maski-vvoda-telefona.html -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+  <script>
+    $(function () {
+      $('input[type="tel"]').mask('+7(000)000-00-00');
+    });
+  </script>
 </body>
 </html>

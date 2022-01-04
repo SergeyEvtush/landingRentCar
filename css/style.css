@@ -41,7 +41,11 @@ body {
 body._lock{
 
 	overflow: hidden;
+
 	}
+header.open{
+	display: none;
+}
 /*-----------------------------------------------*/
 .wraper{
 	display: flex;
@@ -97,6 +101,7 @@ body._lock{
 	margin: 0px -10px;
 		
 	}
+
 	.logotype__image{
 		position: relative;
 		z-index: 10;
@@ -255,7 +260,7 @@ body._lock{
 		/*sevices styles---------------------------*/
 		.page__services {
 			position: relative;
-			z-index: 2;
+			
 			margin: -80px 0px 0px 0px;
 		}
 		.services {
@@ -297,7 +302,7 @@ body._lock{
 			@media(max-width:460px){
 				.page__services {
 					position: relative;
-					z-index: 2;
+				
 					margin: -20px 0px 0px 0px;
 				}
 			
@@ -611,6 +616,7 @@ padding:60px 0px ;
 .menu__icon {
 	display: none;
 }
+.menu__icon.novisible{display: none;}
 .menu__body {
 }
 .menu__list {

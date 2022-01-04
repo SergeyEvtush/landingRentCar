@@ -2,6 +2,7 @@
 //бургер
 const iconMenu=document.querySelector('.menu__icon');
 const menuBody=document.querySelector('.menu__body');
+const popupActive1=document.querySelectorAll('.popup.open');
 if(iconMenu)
 {
 
@@ -20,12 +21,15 @@ if(menuLinks.length>0)
 menuLinks.forEach(menuLink=>{
 menuLink.addEventListener("click",onMenuLinkClick)
 });
+
 function onMenuLinkClick(e)
 	{
+	
 const menuLink=e.target;
 //проверка на то  что есть ли чтото в датат атрибуте и  существует ли объект на который ссылается данный атрибут  
 if(menuLink.dataset.goto&&document.querySelector(menuLink.dataset.goto))
 			{
+				
 	//получаем сам объект на который	 ссылается дата атрибут
 const gotoBlock = document.querySelector(menuLink.dataset.goto);
 //вычисляем положение объекта с учетом высоты шапки
