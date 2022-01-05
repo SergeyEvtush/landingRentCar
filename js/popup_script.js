@@ -15,20 +15,18 @@ if(popupLinks.length>0)
 for(let index=0;index<popupLinks.length;index++)
 {
 	const popupLink=popupLinks[index];
-	const titleCard=titleCards[index];
+	const titleCard=titleCards[index];//получаю объект в котором написана марка автомобиля
 	
 	popupLink.addEventListener("click",function(e){
 	
 		
 	const popupName = popupLink.getAttribute('href').replace('#','');//здесь мы берем ссылку на которую кликаем и из атрибута href  убирае решетку и заменяем на имя по id
 	const curentPopup=document.getElementById(popupName);
-	
-	let  titleCardValue=titleCard.innerText;
-	document.getElementById("carBrand").value=titleCardValue;
-	console.log(titleCardValue);
-	popupOpen(curentPopup);
-	HeaderVar.classList.add('novisible');
-	//с пом этой функции запрещаем перезагружать страницу e.preventDefault();
+	let  titleCardValue=titleCard.innerText;//получаю текст который написан в том объекте кнопку которого мы слушаем
+	document.getElementById("carBrand").value=titleCardValue;//записываем  полученный текст в инпут который находится в попапе в форме
+	popupOpen(curentPopup);//щткрываем попап
+	HeaderVar.classList.add('novisible');//присваиваем классу header класс novisible для того чтобы при получении этого класса его убрать при открытии попапа
+	e.preventDefault();//с пом этой функции запрещаем перезагружать страницу 
 }
 	);}
 	
@@ -45,6 +43,7 @@ if(popupCloseIcon.length>0)
 const el=popupCloseIcon[index];
 el.addEventListener(
 	'click',function(e){
+		document.getElementById("form-contact").reset();
 		popupClose(el.closest('.popup'));
 		HeaderVar.classList.remove('novisible');
 		e.preventDefault();
@@ -130,5 +129,3 @@ function addClassToLabel(){
 	labelbuster.classList.toggle('choise');
 
 }
-/*https://youtu.be/qoO1ZNi1LyI?t=2185*/
-//todo разобраться со всеми попапами и ссылками
