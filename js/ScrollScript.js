@@ -8,6 +8,7 @@ for(let i=0;i<animItems.length;i++){
 	const animItem=animItems[i];
 	const animItemHeight=animItem.offsetHeight;
 	const animItemOffset = offset(animItem).top;//с пом функции(см ниже) растояние от верха экрана до объекта 
+
 	const animStart=4;//коэффициент регулирующий момент старта анимации
 	//расчет точки начала анимации
 let animItemPoint=window.innerHeight-animItemHeight/animStart;//высота окна браузера минус высота объекта поделенную на коэффициент регулирующий момент начала старта анимации

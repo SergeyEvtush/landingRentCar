@@ -67,8 +67,8 @@
 			flex: 0 0 100%;
 		}
     .contact-form__input_car{
-      background: url("/img/form__icons/calendar.svg") center left 15px no-repeat, #1c1e21;
-			background-size: 30px;
+      background: url("/img/form__icons/car.svg") center left 15px no-repeat, #1c1e21;
+			background-size: 40px;
 			flex: 0 0 100%;
 
     }
@@ -106,7 +106,6 @@
 	cursor: pointer;
   transition: all 0.3s ease 0s;
 		}
-    /*hello*/
     .buster__label.choise span{
       font-size: 20px;
     text-decoration: underline;
@@ -116,7 +115,6 @@
       position: relative;
       z-index: -1;
       opacity: 0;
-     
     }
     .contact-form__input-checkbox + label {
       position: relative;

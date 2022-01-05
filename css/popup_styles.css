@@ -32,10 +32,8 @@ visibility: visible;
 }
 .popup .open .popup__content{
 transform: perspective(600px) translate(0px,0%) rotate(0deg);
-
 }
 .popup__content {
-	
 	color: black;
 	max-width: 630px;
 	padding: 30px;
@@ -44,14 +42,11 @@ transform: perspective(600px) translate(0px,0%) rotate(0deg);
 }
 @media(max-width:430px){
 	.popup__content {
-	
 		color: black;
 		max-width: 100%;
 		padding: 5px;
 		position: relative;
-		
 	}
-
 }
 .popup__close {
 	position: absolute;
@@ -76,4 +71,3 @@ transform: perspective(600px) translate(0px,0%) rotate(0deg);
 	margin: 0px 0px 1em 0px;
 }
 
-/*https://youtu.be/qoO1ZNi1LyI*/
