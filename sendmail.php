@@ -20,7 +20,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
     // Если не пустые, то валидируем эти поля и сохраняем и добавляем в тело сообщения. Минимально для теста так:
     $txt = "";
-    
+    if (isset($_POST['car']) && !empty($_POST['car'])) {
+      $txt .= "Марка автомобиля: " . strip_tags(trim(urlencode($_POST['car']))) . "%0A";
+  }
     // Имя
     if (isset($_POST['name']) && !empty($_POST['name'])) {
         $txt .= "Имя пославшего: " . strip_tags(trim(urlencode($_POST['name']))) . "%0A";
@@ -38,10 +40,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	 if (isset($_POST['date__back']) && !empty($_POST['date__back'])) {
 		$txt .= "Дата возврата автомобиля: " . strip_tags(trim(urlencode($_POST['date__back']))) . "%0A";
   }
-   if (isset($_POST['buster__yes']) && !empty($_POST['buster__yes'])) {
-	$txt .= "Необходимо детское кресло" . strip_tags(trim(urlencode( $buster['buster__yes']))) . "%0A";
-}if(isset($_POST['buster__no']) && !empty($_POST['buster__no'])) {
-	$txt .= " " . strip_tags(trim(urlencode( $buster['buster__no']))) . "%0A";
+   if (isset($_POST['buster']) && !empty($_POST['buster'])) {
+	$txt .= "Необходимо детское кресло" . strip_tags(trim(urlencode( $buster['buster']))) . "%0A";
 }
     // Не забываем про тему сообщения
     if (isset($_POST['theme']) && !empty($_POST['theme'])) {

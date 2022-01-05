@@ -1,4 +1,5 @@
 "use strict"
+const titleCards=document.querySelectorAll('.column__header-offert');
 const popupLinks = document.querySelectorAll('.popup-link');
 const body = document.querySelector('body');
 const lockPadding = document.querySelectorAll(".lock-padding");
@@ -7,22 +8,27 @@ const Radio = document.querySelector('.form__buster__yes');
 let labelbuster=document.querySelector('.buster__label');
 let unlock = true;
 const timeout = 800;
-
+console.log(titleCards.length);
 if(popupLinks.length>0)
 {
 	
 for(let index=0;index<popupLinks.length;index++)
 {
 	const popupLink=popupLinks[index];
+	const titleCard=titleCards[index];
+	
 	popupLink.addEventListener("click",function(e){
 		HeaderVar.classList.toggle('novisible');
-		/* labelbuster.classList.toggle('choise');*/
+		
 	const popupName = popupLink.getAttribute('href').replace('#','');//здесь мы берем ссылку на которую кликаем и из атрибута href  убирае решетку и заменяем на имя по id
 	const curentPopup=document.getElementById(popupName);
 	
+	let  titleCardValue=titleCard.innerText;
+	document.getElementById("carBrand").value=titleCardValue;
+	console.log(titleCardValue);
 	popupOpen(curentPopup);
 	
-	e.preventDefault();//с пом этой функции запрещаем перезагружать страницу
+	//с пом этой функции запрещаем перезагружать страницу e.preventDefault();
 }
 	);}
 	
@@ -118,12 +124,10 @@ if(e.which===27){
 const popupActive=document.querySelector('.popup.open');
 popupClose(popupActive);
 }
-
-
 })
-function Radioclick(){
+function addClassToLabel(){
 	labelbuster.classList.toggle('choise');
-	
-	};
+
+}
 /*https://youtu.be/qoO1ZNi1LyI?t=2185*/
 //todo разобраться со всеми попапами и ссылками

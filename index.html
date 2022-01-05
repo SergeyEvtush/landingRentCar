@@ -111,7 +111,7 @@
 				<img src="img/section2RentFotocars/1-hyundai-solaris.jpg" alt="" class="offert__image">
 			</div>
 			<div class="column__content">
-				<div class="column__header-offert ">Hundai Solaris</div>
+				<div class="column__header-offert " id="header_ofert">Kia rio X-lain</div>
 				<div class="column__text-offertCoast">1600 руб / Сутки</div>
 				<div class="column__buttons-offert">
 					<a href="#popup" class="column__offert-button column__button popup-link">Выбрать </a>
@@ -123,7 +123,7 @@
 							<img src="img/section2RentFotocars/2-kia-rio-at-2021.jpg" alt="" class="offert__image">
 						</div>
 					<div class="column__content">
-						<div class="column__header-offert ">Hundai Solaris</div>
+						<div class="column__header-offert " id="header_ofert">Mazda 3</div>
 						<div class="column__text-offertCoast">1600 руб / Сутки</div>
 						<div class="column__buttons-offert">
 							<a href="#popup" class="column__offert-button column__button popup-link">Выбрать </a>
@@ -137,7 +137,7 @@
 									</div>
 								
 									<div class="column__content">
-										<div class="column__header-offert ">Hundai Solaris</div>
+										<div class="column__header-offert " id="header_ofert">Hundai Solaris</div>
 										<div class="column__text-offertCoast">1600 руб / Сутки</div>
 										<div class="column__buttons-offert">
 											<a href="#popup" class="column__offert-button column__button popup-link">Выбрать </a>
@@ -173,7 +173,7 @@
 		Выгодно
 	</div>
 	<div class="advantages-column__subtitle">
-		Плата за аренду идет только за количество суток, доставка в аэропорт, Зеленоградск, Пионерский, Светлогорск бесплатно.
+		 Доставка автомобиля в аэропорт, Зеленоградск, Пионерский, Светлогорск бесплатно.<br>Гибкая система скидок.
 	</div>
 </div>
 	</div>
@@ -188,9 +188,8 @@
 			</div>
 			<div class="advantages-column__subtitle">
 				Оформление договора аренды всего за 5 минут.<br>
-				Доставка автомобиля по адресу 10 - 30 минут.
-				<br>
-				<br>
+				Доставка автомобиля по адресу<br>за 10 - 30 минут.
+				
 			</div>
 		</div>
 			</div>
@@ -205,9 +204,9 @@
 						Комфортно
 					</div>
 					<div class="advantages-column__subtitle">
-						Все автомобили оснащены держателями, зарядками для телефонов, зонтами, салфетками,масками
-						<br>
-						<br>
+						Все автомобили оснащены держателями, зарядками для телефонов, зонтами, салфетками,масками.<br>
+						На связи 24 часа в сутки.
+						
 					</div>
 				</div>
 					</div>
@@ -312,11 +311,11 @@
 				  <p class="contact-form__title">Форма бронирования автомобиля</p>
 				  <div class="preloader"></div>
 				  <p class="contact-form__message"></p>
-					 <!-- Поле с маркой и номером автомобиля--автозаполнение--
+					 <!-- Поле с маркой и номером автомобиля--автозаполнение-- -->
 					  <div class="contact-form__input-wrapper contact-form__input-wrapper_car">
 					  <input name="car" type="text" class="contact-form__input contact-form__input_car" value=""
-								placeholder="">
-					</div> -->
+								placeholder="" id="carBrand">
+					</div>
 			  
 				  <!-- Поле с именем -->
 				  <div class="contact-form__input-wrapper contact-form__input-wrapper_name">
@@ -339,18 +338,10 @@
 					</div>
 					<div class="contact-form__input-wrapper contact-form__input-wrapper_buster">
 						<div class="contact-form-input__item">
-						  <input name="buster__yes" type="radio" class="contact-form__input contact-form__input_buster __yes"
-						  id="form__buster__yes" value="yes" >
-						  <label for="form__buster__yes" class="buster__label" onClick=" Radioclick();">
-							 <span>детское кресло</span><checkbox></checkbox>>
+						 <input type="checkbox" class="contact-form__input-checkbox" id="form__buster__yes" name="buster">
+						  <label for="form__buster__yes" class="buster__label" onclick="addClassToLabel();"><span>Детское кресло</span>
 						 </label>
-						 <label for="form__buster__no" class="buster__label" onClick=" Radioclick();">
-							<span>детское кресло не нужно</span>
-						</label>
-						 <input name="buster__no" type="radio" class="contact-form__input contact-form__input_buster __no"
-						 id="form__buster__no" value="no"checked >
-						</div>
-						
+							</div>
 					</div>
 				  <!--Поле с темой в письме-->
 				  <input name="theme" type="hidden" class="contact-form__input contact-form__input_theme"
