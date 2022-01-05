@@ -43,9 +43,7 @@ body._lock{
 	overflow: hidden;
 
 	}
-header.open{
-	display: none;
-}
+
 /*-----------------------------------------------*/
 .wraper{
 	display: flex;
@@ -85,7 +83,11 @@ header.open{
 		display: flex;
 		align-items: center;
 		justify-content: center;
+		transition: all 0.3s ease 0s;
 	}
+	.header.novisible{
+		opacity: 0;
+	visibility: hidden;}
 	.header__container {
 		
 		flex: 1 1 100%;
@@ -106,9 +108,13 @@ header.open{
 		position: relative;
 		z-index: 10;
 	width: 300px;
-
-
-		 
+transform: translate(-120%,0px);
+opacity: 0;
+transition: all 0.8s ease 0s;
+	}
+	.logotype__image._activeScroll{
+		transform: translate(0px,0px);
+		opacity: 1;
 	}
 	.logotype__image img{
 	max-width: 100%;
@@ -214,7 +220,17 @@ header.open{
             line-height: 1.1;
 				color: #f5d654;
 				text-transform: uppercase;
+				transform: translate(0px,20%);
+			opacity: 0;
+			transition: all 0.8s ease 0s;
 			}
+			
+				
+			.main-block__title._activeScroll{
+					transform: translate(0px,0px);
+					opacity: 1;
+				}
+
 			.main-block__subtitle {
 				color: #ccd3db;
 				font-weight: 400;
@@ -222,15 +238,28 @@ header.open{
 				line-height: 1.1;
 				text-transform: uppercase;
 				padding:  0px 0px 62px 0px;
+				transform: translate(0px,20%);
+			opacity: 0;
+			transition: all 0.8s ease 0s;
+			}
+			.main-block__subtitle._activeScroll{
+				transform: translate(0px,0px);
+				opacity: 1;
 			}
 			.main-block__text {
 				font-size: 18px;
              line-height: 1.6;
 				color: #ffffff ;
 				padding:  0px 0px 21px 0px;
+				transform: translate(0px,20%);
+			opacity: 0;
+			transition: all 0.8s ease 0s;
 			}
-			.main-block__buttons {
+			.main-block__text._activeScroll{
+				transform: translate(0px,0px);
+				opacity: 1;
 			}
+			
 			.main-block__button {
 				display: flex;
 				min-height: 48px;
@@ -242,6 +271,13 @@ header.open{
 				text-transform: uppercase;
 				letter-spacing: 1px;
 				transition: all 0.3s ease 0s;
+				transform: translate(0px,20%);
+				opacity: 0;
+				
+			}
+			.main-block__button._activeScroll{
+				transform: translate(0px,0px);
+				opacity: 1;
 			}
 			.main-block__button_grey {
 				color: #ffffff !important;
@@ -263,8 +299,7 @@ header.open{
 			
 			margin: -80px 0px 0px 0px;
 		}
-		.services {
-		}
+		
 		.services__body{
 			padding: 0px 10px;
 			margin: 0px -10px;
@@ -274,6 +309,14 @@ header.open{
 	
 		.services__column {
 			flex: 1 1 33.333%;
+			transition: all 0.8s ease 0s;
+			transform: scale(0);
+			opacity: 0;
+		}
+		
+		.services__column._activeScroll{
+			transform: scale(1);
+			opacity: 1;
 		}
 		.services__column:not(:last-child){
 			margin-right: 70px;	
@@ -392,7 +435,18 @@ margin:  0px -10px;
 	padding: 10px;
 	background: #ffff;
 	min-width: 300px;
+	transition: all 0.8s ease 0s;
+	transform: scale(0);
+	transform: translate(0px,30%);
+	opacity: 0;
+}
 
+
+
+.offert__column._activeScroll{
+	transform: scale(1);
+	transform: translate(0px,0px);
+	opacity: 1;
 }
 @media(max-width:970px){
 	.offert__body {
@@ -485,6 +539,16 @@ margin: 20px auto;
 	flex: 1 1 20%;
 	min-width: 200px;
 	min-height: 280px;
+	transition: all 0.8s ease 0s;
+	transform: scale(0);
+	transform: translate(0px,30%);
+	opacity: 0;
+}
+
+.advantages__column._activeScroll{
+	transform: scale(1);
+	transform: translate(0px,0px);
+	opacity: 1;
 }
 @media(max-width:430px){
 	.advantages__column	 {
@@ -494,10 +558,7 @@ margin: 20px auto;
 	}
 
 }
-.advantages__item {
-}
-.advantages__icon {
-}
+
 .advantages-column__title {
 	padding:10px 0px ;
 	font-size: 1rem;
@@ -597,14 +658,7 @@ background: #FFF;
 	color: #111111;
 	padding: 5px;
 }
-.phone__link {
-}
 
-.mail__link {
-}
-
-.place__link {
-}
 /*footer down styles---------------------------*/
 .footer__social {
 	background: #000;
@@ -615,8 +669,7 @@ display: flex;
 justify-content: flex-end;
 padding:60px 0px ;
 }
-.social {
-}
+
 .social__item {
 	padding: 8px;
 }
@@ -625,11 +678,8 @@ padding:60px 0px ;
 .menu__icon {
 	display: none;
 }
-.menu__icon.novisible{display: none;}
-.menu__body {
-}
-.menu__list {
-}
+
+
 .link__geograph{
 	color: #111111;
 }

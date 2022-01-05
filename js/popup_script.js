@@ -3,7 +3,7 @@ const titleCards=document.querySelectorAll('.column__header-offert');
 const popupLinks = document.querySelectorAll('.popup-link');
 const body = document.querySelector('body');
 const lockPadding = document.querySelectorAll(".lock-padding");
-const HeaderVar=document.querySelector('.menu__icon');
+const HeaderVar=document.querySelector('.header');
 const Radio = document.querySelector('.form__buster__yes');
 let labelbuster=document.querySelector('.buster__label');
 let unlock = true;
@@ -18,7 +18,7 @@ for(let index=0;index<popupLinks.length;index++)
 	const titleCard=titleCards[index];
 	
 	popupLink.addEventListener("click",function(e){
-		HeaderVar.classList.toggle('novisible');
+	
 		
 	const popupName = popupLink.getAttribute('href').replace('#','');//здесь мы берем ссылку на которую кликаем и из атрибута href  убирае решетку и заменяем на имя по id
 	const curentPopup=document.getElementById(popupName);
@@ -27,7 +27,7 @@ for(let index=0;index<popupLinks.length;index++)
 	document.getElementById("carBrand").value=titleCardValue;
 	console.log(titleCardValue);
 	popupOpen(curentPopup);
-	
+	HeaderVar.classList.add('novisible');
 	//с пом этой функции запрещаем перезагружать страницу e.preventDefault();
 }
 	);}
@@ -79,6 +79,7 @@ if(unlock){
 popupActive.classList.remove('open');
 if(doUnlock){
 bodyUnLock();
+HeaderVar.classList.remove('novisible');
 }
 }
 }

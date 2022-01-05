@@ -13,8 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $fileSendStatus = '';
   $textSendStatus = '';
   $msgs = [];
-/*  $buster="Бустер не нужен";
-  if($_POST['buster']=="yes"){$buster="Бустер нужен";}*/
+
   // Проверяем не пусты ли поля с именем и телефоном
   if (!empty($_POST['name']) && !empty($_POST['phone'])&&!empty($_POST['date_take'])&&!empty($_POST['date__back'])) {
     
