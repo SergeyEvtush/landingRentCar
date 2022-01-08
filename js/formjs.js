@@ -5,7 +5,7 @@
 	  // Сообщения формы
 	  let successSendText = "Сообщение успешно отправлено";
 	  let errorSendText = "Сообщение не отправлено. Попробуйте еще раз!";
-	  let requiredFieldsText = "Заполните поля с именем и телефоном";
+	  let requiredFieldsText = "Заполните пустые поля";
  
 	  // Сохраняем в переменную класс с параграфом для вывода сообщений об отправке
 	  let message = $(this).find(".contact-form__message");
@@ -25,7 +25,7 @@
 			$(".preloader").removeClass("preloader_active");
  
 			// Посмотреть на статус ответа, если ошибка
-			 console.log(res);
+			//console.log(res);
 			let respond = $.parseJSON(res);
  
 			if (respond === "SUCCESS") {

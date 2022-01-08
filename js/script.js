@@ -98,7 +98,7 @@ e.preventDefault();//отключаем работу ссылки
 			},300);
 		
 	}
-	"use strict"
+/*popup */
 const titleCards=document.querySelectorAll('.column__header-offert');
 const popupLinks = document.querySelectorAll('.popup-link');
 const body = document.querySelector('body');
@@ -106,20 +106,22 @@ const lockPadding = document.querySelectorAll(".lock-padding");
 const HeaderVar=document.querySelector('.header');
 const Radio = document.querySelector('.form__buster__yes');
 let labelbuster=document.querySelector('.buster__label');
+const coookiePopupLinks=document.querySelectorAll('.btn_link')
 let unlock = true;
 const timeout = 800;
-console.log(titleCards.length);
+console.log(popupLinks.length);
+console.log(popupLinks[3]);
 if(popupLinks.length>0)
 {
 	
 for(let index=0;index<popupLinks.length;index++)
 {
 	const popupLink=popupLinks[index];
-	const titleCard=titleCards[index];//получаю объект в котором написана марка автомобиля
+	
 	
 	popupLink.addEventListener("click",function(e){
 	
-		
+		const titleCard=titleCards[index];//получаю объект в котором написана марка автомобиля
 	const popupName = popupLink.getAttribute('href').replace('#','');//здесь мы берем ссылку на которую кликаем и из атрибута href  убирае решетку и заменяем на имя по id
 	const curentPopup=document.getElementById(popupName);
 	let  titleCardValue=titleCard.innerText;//получаю текст который написан в том объекте кнопку которого мы слушаем
@@ -131,7 +133,21 @@ for(let index=0;index<popupLinks.length;index++)
 	);}
 	
 }
+//для попапа cookie
+if(coookiePopupLinks.length>0)
+{
+for(let i=0;i<coookiePopupLinks.length;i++){
 
+const coookiePopupLink=coookiePopupLinks[i];
+coookiePopupLink.addEventListener("click",function(e){
+	const CookiepopupName = coookiePopupLink.getAttribute('href').replace('#','');
+	const CookiecurentPopup=document.getElementById(CookiepopupName);
+	popupOpen( CookiecurentPopup);
+	e.preventDefault();
+});
+}
+
+}
 
 
 //метод для объектов закрывающих попап
@@ -229,3 +245,28 @@ function addClassToLabel(){
 	labelbuster.classList.toggle('choise');
 
 }
+
+/*cookies */
+// функция возвращает cookie с именем name, если есть, если нет, то undefined    
+ function getCookie(name) {
+	let matches = document.cookie.match(new RegExp(
+	"(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
+	));
+	return matches ? decodeURIComponent(matches[1]) : undefined;
+}
+let cookiecook = getCookie("cookiecook"),
+cookiewin = document.getElementsByClassName('cookie_notice')[0];    
+// проверяем, есть ли у нас cookie, с которой мы не показываем окно и если нет, запускаем показ
+if (cookiecook != "no") {
+	// показываем    
+	cookiewin.style.display="block"; 
+	// закрываем по клику
+	document.getElementById("cookie_close").addEventListener("click", function(){
+		 cookiewin.style.display="none";    
+		 // записываем cookie на 1 день, с которой мы не показываем окно
+		 let date = new Date;
+		 date.setDate(date.getDate() + 1);    
+		 document.cookie = "cookiecook=no; path=/; expires=" + date.toUTCString();               
+	});
+}
+
