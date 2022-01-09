@@ -109,8 +109,6 @@ let labelbuster=document.querySelector('.buster__label');
 const coookiePopupLinks=document.querySelectorAll('.btn_link')
 let unlock = true;
 const timeout = 800;
-console.log(popupLinks.length);
-console.log(popupLinks[3]);
 if(popupLinks.length>0)
 {
 	
@@ -146,10 +144,7 @@ coookiePopupLink.addEventListener("click",function(e){
 	e.preventDefault();
 });
 }
-
 }
-
-
 //метод для объектов закрывающих попап
 const popupCloseIcon = document.querySelectorAll('.close-popup');
 if(popupCloseIcon.length>0)
@@ -243,9 +238,7 @@ popupClose(popupActive);
 })
 function addClassToLabel(){
 	labelbuster.classList.toggle('choise');
-
 }
-
 /*cookies */
 // функция возвращает cookie с именем name, если есть, если нет, то undefined    
  function getCookie(name) {
